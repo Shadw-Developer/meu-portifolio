@@ -1,0 +1,7 @@
+{
+  "name": "Portfólio Alisson (@mrx_dev)",
+  "description": "Portfólio de Alisson (@mrx_dev), Engenheiro Full Stack Sênior focado em escalabilidade, arquitetura e eficiência.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
