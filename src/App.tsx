@@ -10,7 +10,7 @@ import {
   ChevronDown,
   ChevronUp,
   Github,
-  ExternalLink,
+  ExternalLink,  
   Code2,
   Activity,
   Award,
@@ -27,7 +27,7 @@ import { Project } from './types';
 const SectionTitle = ({ title, subtitle }: { title: string, subtitle?: string }) => (
   <div className="mb-8 lg:mb-12">
     <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 tracking-tight">{title}</h2>
-    {subtitle && <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl">{subtitle}</p>}
+    {subtitle && <p className="t--ext-zinc-400 mt-2 text-sm md:text-base max-w-2xl">{subtitle}</p>}
   </div>
 );
 
@@ -209,13 +209,13 @@ const SkillRing: React.FC<SkillRingProps> = ({ percentage, label, experience, co
 
 const SkillHUD = () => {
   const skills = [
-    { label: "Kotlin", pct: 95, color: "#818cf8", exp: "6 Anos" }, // Indigo
-    { label: "Python", pct: 90, color: "#34d399", exp: "5 Anos" }, // Emerald
-    { label: "Go", pct: 85, color: "#22d3ee", exp: "3 Anos" }, // Cyan
-    { label: "React", pct: 88, color: "#60a5fa", exp: "5 Anos" }, // Blue
-    { label: "Node/JS", pct: 82, color: "#fbbf24", exp: "4 Anos" }, // Amber
-    { label: "C#", pct: 75, color: "#a78bfa", exp: "4 Anos" }, // Violet
-    { label: "Lua", pct: 70, color: "#f472b6", exp: "2 Anos" }  // Pink
+    { label: "Kotlin", pct: 18, color: "#818cf8", exp: "1 mês" },
+    { label: "Python", pct: 90, color: "#34d399", exp: "5 Anos" },
+    { label: "Go", pct: 5, color: "#22d3ee", exp: "2 semanas" },
+    { label: "React", pct: 30, color: "#60a5fa", exp: "3 meses" },
+    { label: "Node/JS", pct: 82, color: "#fbbf24", exp: "2 anos" },
+    { label: "C#", pct: 5, color: "#a78bfa", exp: "2 semanas" },
+    { label: "Lua", pct: 20, color: "#f472b6", exp: "1 mês"}
   ];
 
   return (
@@ -236,7 +236,6 @@ const SkillHUD = () => {
 
 
 // --- Project Lab Component ---
-
 type TechStack = 'REACT' | 'KOTLIN' | 'DART' | 'PYTHON' | 'GOLANG' | 'NODE' | 'CSHARP' | 'LUA';
 
 interface LabProjectItem {
@@ -376,7 +375,6 @@ const ProjectLab = () => {
 };
 
 // --- Certificates & Resume Section ---
-
 const CertificatesSection = () => {
   const certifications = [
     {

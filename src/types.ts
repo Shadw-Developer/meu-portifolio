@@ -16,11 +16,11 @@ export interface Project {
   problem: string;
   architecture: string;
   result: string;
-  details: string; // New field for deep dive content
+  details: string;
   tech: string[];
   githubUrl?: string;
   demoUrl?: string;
-  imageUrl?: string; // Added for visual identity
+  imageUrl?: string;
 }
 
 export interface GroundingSource {
