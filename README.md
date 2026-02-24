@@ -5,14 +5,9 @@
 ![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google_AI-Gemini_SDK-8E75B2?style=for-the-badge&logo=google&logoColor=white)
 
 > **Portfólio de Engenharia de Software** focado em demonstrar solidez arquitetural, UX moderna e integração com tecnologias emergentes.
-
-
-> **Portfólio de Engenharia de Software** focado em demonstrar solidez arquitetural, UX moderna e integração com tecnologias emergentes.
-</div>
-
+> 
 Este projeto é a representação digital de **Alisson (@mrx_dev)**, Engenheiro Full Stack Sênior. A aplicação foi construída com foco em **performance**, **acessibilidade** e uma estética **minimalista/futurista**.
 
 ---
