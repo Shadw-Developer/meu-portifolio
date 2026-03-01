@@ -23,7 +23,6 @@ import {
 import { Project } from './types';
 
 // --- Sub-Components ---
-
 const SectionTitle = ({ title, subtitle }: { title: string, subtitle?: string }) => (
   <div className="mb-8 lg:mb-12">
     <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 tracking-tight">{title}</h2>
@@ -42,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden hover:border-indigo-500/50 transition-all group shadow-lg shadow-black/20 flex flex-col h-full hover:shadow-indigo-500/10 hover:-translate-y-1 duration-300">
       {/* Project Image Section */}
       <div className="relative h-48 lg:h-56 overflow-hidden border-b border-zinc-800">
-        <div className="absolute inset-0 bg-zinc-800 animate-pulse" /> {/* Loading skeleton placeholder */}
+        <div className="absolute inset-0 bg-zinc-800 animate-pulse" />
         {project.imageUrl && (
           <img 
             src={project.imageUrl} 
@@ -156,7 +155,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 };
 
 // --- Circular Progress / Skill HUD ---
-
 interface SkillRingProps {
   percentage: number;
   label: string;
@@ -172,6 +170,7 @@ const SkillRing: React.FC<SkillRingProps> = ({ percentage, label, experience, co
   return (
     <div className="flex flex-col items-center group p-2">
       <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+        
         {/* Background Circle */}
         <svg className="transform -rotate-90 w-full h-full" viewBox="0 0 96 96">
           <circle
@@ -183,6 +182,7 @@ const SkillRing: React.FC<SkillRingProps> = ({ percentage, label, experience, co
             fill="transparent"
             className="text-zinc-800"
           />
+          
           {/* Progress Circle */}
           <circle
             cx="48"
@@ -248,7 +248,6 @@ interface LabProjectItem {
 const ProjectLab = () => {
   const [activeTech, setActiveTech] = useState<TechStack>('REACT');
 
-  // Flat list of projects to allow real filtering
   const allLabProjects: LabProjectItem[] = [
     // REACT
     { name: "Enterprise Dashboard com RBAC", tech: 'REACT', repoUrl: "#" },
@@ -409,7 +408,6 @@ const CertificatesSection = () => {
         <SectionTitle title="Credenciais Profissionais" subtitle="Validação Técnica & Histórico" />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-          {/* Resume Card - Takes 2 cols on Desktop */}
           <div className="md:col-span-2 lg:col-span-2 flex flex-col">
              <div className="bg-gradient-to-br from-indigo-900/40 to-zinc-900 border border-indigo-500/30 p-6 rounded-xl h-full relative overflow-hidden group hover:border-indigo-500 transition-colors shadow-lg hover:shadow-indigo-500/20">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -431,7 +429,6 @@ const CertificatesSection = () => {
              </div>
           </div>
 
-          {/* Certificates Grid - Takes 3 cols on Desktop */}
           <div className="md:col-span-2 lg:col-span-3 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 auto-rows-min">
              {certifications.map((cert, idx) => (
                <div key={idx} className="bg-zinc-900/50 border border-zinc-800 p-4 rounded-lg flex items-start gap-4 hover:bg-zinc-800/50 transition-colors group h-full">
@@ -461,13 +458,11 @@ const CertificatesSection = () => {
 };
 
 // --- Main App Components ---
-
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Trigger fade-in animation
     setMounted(true);
 
     const handleScroll = () => {
@@ -516,7 +511,6 @@ const Hero = () => {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
             />
           </div>
-          {/* Decorative elements behind profile with slightly different parallax speed for depth */}
           <div 
             className="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl -z-10 animate-pulse"
             style={{ transform: `translateY(${scrollY * -0.1}px)` }}
@@ -659,7 +653,6 @@ const Projects = () => {
     <section className="py-16 lg:py-24 border-b border-zinc-800/50">
       <div className="max-w-4xl lg:max-w-7xl mx-auto px-6">
         <SectionTitle title="Projetos Selecionados" subtitle="Problema • Arquitetura • Resultado" />
-        {/* Responsive Grid: 1 col Mobile, 2 cols Large Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
           {projects.map((p, i) => <ProjectCard key={i} project={p} />)}
         </div>
@@ -722,7 +715,6 @@ const Stack = () => (
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -736,9 +728,8 @@ export default function App() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    setMobileMenuOpen(false); // Close mobile menu when a link is clicked
+    setMobileMenuOpen(false);
     
-    // Add small delay to allow menu to close and body scroll to unlock before scrolling
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
@@ -751,7 +742,6 @@ export default function App() {
     <div 
       className="min-h-screen bg-zinc-950 text-zinc-50"
       style={{
-        // Tactical Grid Pattern
         backgroundColor: '#09090b', 
         backgroundImage: `
           linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
@@ -769,7 +759,6 @@ export default function App() {
             <a href="#stack" onClick={(e) => handleNavClick(e, 'stack')} className="hover:text-white transition-colors">Stack</a>
             <a href="#credentials" onClick={(e) => handleNavClick(e, 'credentials')} className="hover:text-indigo-400 transition-colors">Currículo</a>
           </div>
-          {/* Mobile Trigger */}
           <button 
             className="md:hidden text-zinc-400 hover:text-white p-2"
             onClick={() => setMobileMenuOpen(true)}
@@ -779,18 +768,15 @@ export default function App() {
           </button>
         </div>
       </nav>
-
-      {/* Mobile Menu Sidebar Overlay */}
+      
       <div 
         className={`fixed inset-0 z-[100] md:hidden transition-visibility duration-300 ${mobileMenuOpen ? 'visible' : 'invisible'}`}
       >
-        {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setMobileMenuOpen(false)}
         />
-
-        {/* Sidebar */}
+        
         <div 
           className={`absolute right-0 top-0 h-full w-64 bg-zinc-950 border-l border-zinc-800 p-6 shadow-2xl transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
