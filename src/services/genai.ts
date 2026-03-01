@@ -1,14 +1,14 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { ImageSize } from "../types";
 
-// Initialize AI Client
-// Note: process.env.API_KEY is guaranteed to be available by the environment.
+// Inicializa o cliente de IA
+// Observação: process.env.API_KEY está garantidamente disponível pelo ambiente.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 /**
- * 1. AI Powered Chatbot & 5. Analyze Images
- * Model: gemini-3-pro-preview
- * Supports text and image analysis.
+ * 1. Chatbot com IA & Analisar Imagens
+ * Modelo: gemini-3-pro-preview
+ * Suporta análise de texto e imagem.
  */
 export const sendChatMessage = async (
   history: { role: string; parts: { text?: string }[] }[],
@@ -31,20 +31,20 @@ export const sendChatMessage = async (
 
   const chat = ai.chats.create({
     model,
-    history: history as any, // Cast to match SDK type
+    history: history as any,
   });
 
   const response = await chat.sendMessageStream({
-    message: { parts: contentParts } as any // Handle multiple parts in message
+    message: { parts: contentParts } as any
   });
 
   return response;
 };
 
 /**
- * 2. Think more when needed (Architecture Advisor)
- * Model: gemini-3-pro-preview
- * Config: thinkingBudget: 32768
+ * 2. Pensar mais quando necessário (Consultor de Arquitetura)
+ * Modelo: gemini-3-pro-preview
+ * Configuração: thinkingBudget: 32768
  */
 export const askArchitect = async (prompt: string) => {
   const response = await ai.models.generateContentStream({
@@ -60,9 +60,9 @@ export const askArchitect = async (prompt: string) => {
 };
 
 /**
- * 3. Use Google Search data
- * Model: gemini-3-flash-preview
- * Tool: googleSearch
+ * 3. Usar dados da Pesquisa Google
+ * Modelo: gemini-3-flash-preview
+ * Ferramenta: googleSearch
  */
 export const searchMarketTrends = async (query: string) => {
   const response = await ai.models.generateContent({
@@ -76,9 +76,9 @@ export const searchMarketTrends = async (query: string) => {
 };
 
 /**
- * 4. Use Google Maps data
- * Model: gemini-2.5-flash
- * Tool: googleMaps
+ * 4. Usar dados do Google Maps
+ * Modelo: gemini-2.5-flash
+ * Ferramenta: googleMaps
  */
 export const queryLocationServices = async (query: string, userLoc?: { lat: number; lng: number }) => {
   const toolConfig: any = {};
@@ -104,8 +104,8 @@ export const queryLocationServices = async (query: string, userLoc?: { lat: numb
 };
 
 /**
- * 6. Generate images with Nano Banana Pro
- * Model: gemini-3-pro-image-preview
+ * 6. Gerar imagens com Nano Banana Pro
+ * Modelo: gemini-3-pro-image-preview
  */
 export const generateHighFidelityImage = async (prompt: string, size: ImageSize) => {
   const response = await ai.models.generateContent({
@@ -123,8 +123,8 @@ export const generateHighFidelityImage = async (prompt: string, size: ImageSize)
 };
 
 /**
- * 7. Nano banana powered app (Edit Images)
- * Model: gemini-2.5-flash-image
+ * 7. Aplicativo com tecnologia Nano Banana (Editar Imagens)
+ * Modelo: gemini-2.5-flash-image
  */
 export const editImage = async (originalBase64: string, prompt: string, mimeType: string) => {
   const response = await ai.models.generateContent({
@@ -145,7 +145,7 @@ export const editImage = async (originalBase64: string, prompt: string, mimeType
 };
 
 /**
- * Helper to extract image from response parts
+ * Função auxiliar para extrair imagem das partes da resposta
  */
 export const extractImageFromResponse = (response: any): string | null => {
   if (!response.candidates?.[0]?.content?.parts) return null;
