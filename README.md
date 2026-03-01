@@ -1,109 +1,217 @@
-<div align="center">
+<div align="center">MRX.DEV
 
-# MRX.DEV | Portfolio Profissional
+Portfolio Profissional de Engenharia de Software
 
-![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  
 
-> **Portfólio de Engenharia de Software** focado em demonstrar solidez arquitetural, UX moderna e integração com tecnologias emergentes.
-> 
-Este projeto é a representação digital de **Alisson (@mrx_dev)**, Engenheiro Full Stack Sênior. A aplicação foi construída com foco em **performance**, **acessibilidade** e uma estética **minimalista/futurista**.
+Portfólio técnico orientado à arquitetura, performance e integração com IA generativa.
+
+</div>
 
 ---
 
-## 🚀 Funcionalidades Chave
+## 📌 Overview
 
-*   **Design Responsivo & Fluido:** Layout adaptativo com menu mobile "off-canvas" e animações suaves.
-*   **Case Studies Dinâmicos:** Renderização de detalhes técnicos de projetos utilizando Markdown (`react-markdown`) para formatação rica.
-*   **Skill HUD:** Visualização interativa de competências técnicas.
-*   **Arquitetura Modular:** Componentização clara e separação de responsabilidades.
-*   **AI-Ready Infrastructure:** Camada de serviço (`services/genai.ts`) pré-configurada para integração com o **Google Gemini API** (Modelos Pro, Flash e Vision).
+O <b>MRX.DEV</b> é um portfólio profissional desenvolvido com foco em:
+
+Arquitetura modular e escalável
+
+Experiência de usuário moderna
+
+Performance otimizada
+
+Preparação nativa para integrações com IA
+
+
+O projeto vai além de uma vitrine visual: ele demonstra decisões arquiteturais, organização de código e preparo para evolução contínua.
+
+
+---
+
+## 🏗️ Arquitetura da Aplicação
+
+A aplicação segue princípios de:
+
+Separação de responsabilidades
+
+Componentização isolada
+
+Tipagem explícita (TypeScript-first)
+
+Camada de serviços desacoplada
+
+
+Estrutura de Diretórios
+```
+/
+├── src/
+│   ├── App.tsx              # Componente raiz e orquestração de seções
+│   ├── types.ts             # Definições de tipos e contratos
+│   └── services/
+│       └── genai.ts         # Camada de abstração para integração com IA
+├── index.html               # Entry point
+├── index.tsx                # Bootstrap da aplicação
+└── metadata.json            # Configurações e permissões
+```
+A camada services/ permite evolução futura sem acoplamento direto à UI, garantindo escalabilidade horizontal da aplicação.
+
+
+---
+
+## 🚀 Funcionalidades
+
+UI & Experiência
+
+Layout 100% responsivo
+
+Menu mobile off-canvas
+
+Animações suaves e micro-interações
+
+Design com Glassmorphism e backdrop-blur
+
+Bloqueio de scroll durante navegação mobile
+
+
+Conteúdo Técnico
+
+Renderização dinâmica de Markdown via react-markdown
+
+Case studies estruturados
+
+Visualização interativa de skills (Skill HUD)
+
+
+Preparação para IA
+
+Infraestrutura pronta para integração com modelos Gemini
+
+Arquitetura preparada para chatbot e assistentes técnicos
+
+Estrutura compatível com processamento multimodal
+
+
 
 ---
 
 ## 🛠️ Stack Tecnológico
 
-### Core
-*   **React 19:** Utilizando as últimas features como Hooks modernos e melhorias de renderização.
-*   **TypeScript:** Tipagem estrita para garantir robustez e manutenibilidade do código.
-*   **Vite/ESM:** Build tool de alta performance (implícito na estrutura).
+Core
 
-### UI/UX
-*   **Tailwind CSS:** Abordagem *utility-first* para estilização rápida e consistente.
-*   **Lucide React:** Biblioteca de ícones leve e customizável.
-*   **Glassmorphism:** Uso intensivo de `backdrop-blur` e transparências para uma estética premium.
+React 19 — Arquitetura baseada em Hooks modernos
 
-### Integração & Dados
-*   **@google/genai:** SDK oficial para integração com modelos Gemini 1.5/Pro.
-*   **React Markdown:** Para renderização segura de conteúdo rico nos cards de projetos.
+TypeScript — Tipagem estrita e previsibilidade estrutural
+
+Vite (ESM) — Build rápido e ambiente leve
+
+
+UI / Design System
+
+Tailwind CSS — Estilização utility-first
+
+Lucide React — Biblioteca de ícones leve
+
+Design baseado em paleta Zinc/Slate com acentos Indigo e Emerald
+
+
+Integração & Dados
+
+@google/genai — SDK oficial para modelos Gemini
+
+react-markdown — Renderização segura de conteúdo estruturado
+
+
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🤖 Integração com IA
 
+A aplicação possui uma camada dedicada em services/genai.ts, projetada para suportar expansão funcional.
+
+Possíveis extensões:
+
+1. AI Chatbot
+Assistente para navegação técnica pelo portfólio.
+
+
+2. Architecture Advisor
+Discussão de decisões arquiteturais com modelos de maior capacidade de raciocínio.
+
+
+3. Análise de Tendências
+Integração com ferramentas de busca para insights em tempo real.
+
+
+4. Processamento Multimodal
+Análise e geração de imagens utilizando modelos compatíveis.
+
+
+
+
+---
+
+## ⚙️ Setup & Execução
+
+## 1. Clone o repositório
 ```bash
-/
-├── src/
-│   ├── App.tsx           # Componente Raiz e orquestrador de seções
-│   ├── types.ts          # Definições de tipos (TypeScript Interfaces/Enums)
-│   └── services/
-│       └── genai.ts      # Camada de abstração para Google Gemini API
-├── index.html            # Entry point com importmap
-├── index.tsx             # Bootstrap da aplicação React
-└── metadata.json         # Configurações de permissões e metadados
+git clone https://github.com/Shadw-Developer/meu-portifolio.git
+```
+## 2. Instale as dependências
+```bash
+npm install
+```
+## 3. Configure variáveis de ambiente (opcional)
+
+Crie um arquivo .env na raiz do projeto:
+```env
+API_KEY=sua_chave_aqui
+```
+Necessário apenas para funcionalidades relacionadas à IA.
+
+4. Execute o ambiente de desenvolvimento
+```bash
+npm run dev
 ```
 
 ---
 
-## 🤖 Integração com IA (Google Gemini)
+## 🎯 Decisões Técnicas Relevantes
 
-O projeto possui uma camada de serviço dedicada em `services/genai.ts` preparada para expandir a interatividade do portfólio. As funcionalidades mapeadas incluem:
+1. Modularização
 
-1.  **AI Chatbot:** Assistente virtual para responder sobre experiências profissionais.
-2.  **Architecture Advisor:** Uso do modelo com *thinking budget* alto para discutir decisões técnicas.
-3.  **Market Trends:** Integração com Google Search Tool para dados em tempo real.
-4.  **Visual Processing:** Capacidade de analisar e gerar imagens via modelos multimodais.
+Separação clara entre UI, tipagens e serviços, permitindo manutenção previsível.
 
----
+2. Tipagem Estrita
 
-## ⚡ Como Executar
+Interfaces centralizadas em types.ts reduzem ambiguidade e melhoram a escalabilidade.
 
-Este projeto foi estruturado para ser leve. Para rodar localmente em um ambiente padrão:
+3. Performance
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/Shadw-Developer/meu-portifolio.git
-    ```
+Uso de Vite + ESM para build rápido e menor overhead.
 
-2.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
+4. UX Mobile-First
 
-3.  **Configure as Variáveis de Ambiente:**
-    Crie um arquivo `.env` na raiz e adicione sua chave da API do Google Gemini (necessário apenas para funcionalidades de IA):
-    ```env
-    API_KEY=sua_chave_aqui
-    ```
+O fluxo mobile foi tratado como prioridade estrutural, não adaptação posterior.
 
-4.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    npm start
-    # ou
-    npm run dev
-    ```
 
 ---
 
-## 🎨 Decisões de Design
+## 📈 Escalabilidade Futura
 
-*   **Tipografia & Cores:** Uso da paleta `Zinc` (Slate) para um fundo escuro profissional, com acentos em `Indigo` e `Emerald` para destacar ações e sucessos.
-*   **UX Mobile:** A navegação mobile foi tratada como cidadã de primeira classe, com bloqueio de scroll (`overflow: hidden`) quando o menu está ativo para evitar comportamentos indesejados.
-*   **Micro-interações:** Hover effects, transições de cor e *fade-ins* sutis para melhorar a percepção de qualidade sem comprometer a performance.
+O projeto está preparado para:
+
+Migração para arquitetura orientada a features
+
+Implementação de testes automatizados (Vitest / Testing Library)
+
+Integração com backend próprio ou BFF
+
+Deploy em edge (Vercel / Cloudflare)
+
+
 
 ---
 
-<p align="center">
-  Desenvolvido por <a href="https://github.com/Shadw-Developer/meu-portifolio.git">Alisson (@mrx_dev)</a>
-</p>
+<div align="center">Desenvolvido por Alisson (@mrx_dev)
+
+</div>
